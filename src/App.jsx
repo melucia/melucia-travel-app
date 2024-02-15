@@ -1,12 +1,13 @@
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import Navbar from "./component/Navbar"
+import { Routes, Route } from 'react-router-dom'
+import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import AboutPage from './pages/AboutPage'
 import AllPlaces from "./pages/AllPlaces"
 import PageNotFound from "./components/PageNotFound"
 import Search from "./components/Search"
-import RandomPlace from "./components/RandomPlace"
+import RandomPlace from "./pages/RandomPlace"
+import PlaceDetails from "./pages/PlaceDetails"
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <div>
         <h1>Melucia</h1>
       </div>
-      <Navbar />
+      <NavBar />
       <Search />
       <RandomPlace />
       <Routes>
