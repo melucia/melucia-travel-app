@@ -14,9 +14,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Melucia</h1>
-      </div>
+     
       <NavBar />
       <Search />
       <RandomPlace />
