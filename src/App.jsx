@@ -8,6 +8,7 @@ import PageNotFound from "./components/PageNotFound"
 import Search from "./components/Search"
 import RandomPlace from "./pages/RandomPlace"
 import PlaceDetails from "./pages/PlaceDetails"
+import HomePage from './pages/HomePage'
 
 function App() {
 
@@ -20,9 +21,10 @@ function App() {
       <Search />
       <RandomPlace />
       <Routes>
-        <Route path='/' element={<AllPlaces />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/places' element={<AllPlaces />} />
         <Route path='/about' element={<AboutPage />} />
-        <Route path="/:placeId" element={<PlaceDetails />} />
+        <Route path="/places/:placeId" element={<PlaceDetails />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

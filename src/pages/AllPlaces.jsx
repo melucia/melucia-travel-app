@@ -5,7 +5,7 @@ function AllPlaces() {
 
     const API_URL = "https://melucia-travel-app.adaptable.app";
 
-    const [places, setPlaces] = useState(null);
+    const [places, setPlaces] = useState([]);
 
 
     const getAllPlaces = () => {
@@ -25,13 +25,20 @@ function AllPlaces() {
         getAllPlaces();
     }, [])
 
+  
+
     return (
 
         <div>
             {places.map((place) => {
                 return (
                     <div key={place.id}>
+                        <img src={place.image} style={{height: "15rem"}} />
                         <h2>{place.city}</h2>
+                        <p>{place.country}</p>
+                        <p>Activity: {place.activity}</p>
+                        <p>Highlight: {place.highlight}</p>
+                        <p>{place.description}</p>
 
                     </div>
                 )
