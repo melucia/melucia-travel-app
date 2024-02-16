@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -42,6 +43,13 @@ function HomePage() {
           <p>{place.country}</p>
           <p>{showTextPreview(place.description, 100)}</p>
           {/* <Link to={"/PlaceDetails"} >More Details </Link> */}
+          <Link to={`/places/${place.id}`}>
+                <button>More details</button>
+              </Link>
+              <Link to={`/places/`}>
+                <button>See all places</button>
+              </Link>
+          
         </div>
       ))}
     </div>
