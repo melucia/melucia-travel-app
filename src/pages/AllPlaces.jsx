@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AddPlace from "./AddPlace";
-// import { FaTrashCan } from "react-icons/fa6";
+import { FaTrashCan } from "react-icons/fa6";
 
 function AllPlaces() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -27,6 +27,9 @@ function AllPlaces() {
   }, []);
 
   const previewText = (text, maxLength) => {
+    if (text === undefined) {
+      return "";
+    }
     if (text.length <= maxLength) {
       return text;
     }
@@ -50,7 +53,7 @@ function AllPlaces() {
         {places.map((place) => {
           return (
             <div key={place.id}>
-              <img src={place.image} style={{ height: "15rem" }} />
+              <img src={place.image} style={{ height: "20rem" }} />
               <h2>{place.city}</h2>
               <p>{place.country}</p>
               <p>{previewText(place.description, 100)}</p>
@@ -64,9 +67,7 @@ function AllPlaces() {
                   deletePlace(place.id);
                 }}
               >
-                {" "}
-                Delete
-                {/* <FaTrashCan /> */}
+                <FaTrashCan />
               </button>
             </div>
           );

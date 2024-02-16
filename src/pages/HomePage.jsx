@@ -23,7 +23,10 @@ function HomePage() {
     getAllPlaces();
   }, []);
 
-  const previewText = (text, maxLength) => {
+  const showTextPreview = (text, maxLength) => {
+    if (text === undefined) {
+      return "";
+    }
     if (text.length <= maxLength) {
       return text;
     }
@@ -37,7 +40,7 @@ function HomePage() {
           <img src={place.image} style={{ height: "15rem" }} />
           <h2>{place.city}</h2>
           <p>{place.country}</p>
-          <p>{previewText(place.description, 100)}</p>
+          <p>{showTextPreview(place.description, 100)}</p>
           {/* <Link to={"/PlaceDetails"} >More Details </Link> */}
         </div>
       ))}
