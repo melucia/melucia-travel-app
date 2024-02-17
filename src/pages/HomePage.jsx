@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import RandomButton from "../components/RandomButton";
+import RandomPlace from "./RandomPlace";
 
 function HomePage() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -36,6 +38,7 @@ function HomePage() {
 
   return (
     <div>
+      <RandomPlace />
       {places.slice(0, 3).map((place) => (
         <div key={place.id}>
           <img src={place.image} style={{ height: "15rem" }} />

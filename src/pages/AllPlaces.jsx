@@ -50,9 +50,9 @@ function AllPlaces() {
     <>
       <AddPlace onAddPlace={handleAddPlace} />
       <div>
-        {places.map((place) => {
+        {places.map((place, index) => {
           return (
-            <div key={place.id}>
+            <div key={index}>
               <Link to={`/places/${place.id}`}>
               <img src={place.image} style={{ height: "20rem" }} />
               </Link>

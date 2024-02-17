@@ -15,12 +15,12 @@ function App() {
     <>
       <NavBar />
       <Search />
-      <RandomPlace />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/places" element={<AllPlaces />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/places/:placeId" element={<PlaceDetails />} />
+        <Route path="/randomplace" element={<RandomPlace />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
