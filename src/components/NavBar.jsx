@@ -7,7 +7,7 @@ function NavBar() {
 
         <img src="/src/assets/melucia-logo.png" alt="logo" />
 
-        <h1>Melucia</h1>
+        <h1>Melucia - Discover your Wanderlust</h1>
       </div>
       <nav>
         <NavLink to="/">Home</NavLink>
