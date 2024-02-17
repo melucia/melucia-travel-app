@@ -26,7 +26,7 @@ function AllPlaces() {
     getAllPlaces();
   }, []);
 
-  const previewText = (text, maxLength) => {
+  const showTextPreview = (text, maxLength) => {
     if (text === undefined) {
       return "";
     }
@@ -56,7 +56,7 @@ function AllPlaces() {
               <img src={place.image} style={{ height: "20rem" }} />
               <h2>{place.city}</h2>
               <p>{place.country}</p>
-              <p>{previewText(place.description, 100)}</p>
+              <p>{showTextPreview(place.description, 100)}</p>
               <Link to={`/places/${place.id}`}>
                 <button>More details</button>
               </Link>
