@@ -53,7 +53,9 @@ function AllPlaces() {
         {places.map((place) => {
           return (
             <div key={place.id}>
+              <Link to={`/places/${place.id}`}>
               <img src={place.image} style={{ height: "20rem" }} />
+              </Link>
               <h2>{place.city}</h2>
               <p>{place.country}</p>
               <p>{showTextPreview(place.description, 100)}</p>
