@@ -3,7 +3,10 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <>
-      <div>
+      <div className="nav">
+
+        <img src="/src/assets/melucia-logo.png" alt="logo" />
+
         <h1>Melucia</h1>
       </div>
       <nav>

@@ -46,7 +46,8 @@ function EditPlace({ onUpdate }) {
     axios
       .put(`${API_URL}/places/${placeId}`, updatedPlace)
       .then((response) => {
-        onUpdate(); // udate state om the parent component
+        console.log("Sending put request")
+        onUpdate(); // update state on the parent component
       })
       .catch((error) => {
         console.log("Error getting details from the API...");
