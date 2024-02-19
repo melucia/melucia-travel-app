@@ -39,7 +39,7 @@ function AddPlace({ onAddPlace }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="shadow-lg border-solid border rounded-xl w-72 h-52 flex-col content-center mb-12">
       <h2>Add a new Place</h2>
 
       <div className="UpdateInput">

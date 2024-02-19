@@ -5,16 +5,15 @@ import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
 import AllPlaces from "./pages/AllPlaces";
 import PageNotFound from "./components/PageNotFound";
-import Search from "./components/Search";
 import RandomPlace from "./pages/RandomPlace";
 import PlaceDetails from "./pages/PlaceDetails";
 import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <>
+    <div className="font-nunito text-blue-950 bg-green-50">
       <NavBar />
-    
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/places" element={<AllPlaces />} />
@@ -24,7 +23,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

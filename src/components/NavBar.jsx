@@ -3,21 +3,22 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <>
-      <div className="nav">
-
-        <img src="/src/assets/melucia-logo.png" alt="logo" />
-
-        <h1>Melucia - Discover your Wanderlust</h1>
+      <div className="flex bg-green-100">
+        <div>
+          <img className="ml-6 mt-1" src="src/assets/melucia-logo.png" atl="logo" />
+        </div>
+        <nav className="w-screen h-16 flex justify-evenly items-center">
+          <NavLink className="cursor-pointer text-sm   lg:text-xl font-bold underline:hover"
+            to="/">Home</NavLink>
+          <NavLink className="cursor-pointer text-sm   lg:text-xl font-bold underline:hover"
+            to="/places">Places</NavLink>
+          <NavLink className="cursor-pointer text-sm   lg:text-xl font-bold underline:hover"
+            to="/about">About</NavLink>
+          <NavLink className="cursor-pointer text-sm   lg:text-xl font-bold underline:hover"
+            to="/randomplace"> Get a random Place</NavLink>
+        </nav>
       </div>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <span>| |</span>
-        <NavLink to="/places">Places</NavLink>
-        <span>| |</span>
-        <NavLink to="/about">About</NavLink>
-        <span>| |</span>
-        <NavLink to="/randomplace"> Get a random Place</NavLink>
-      </nav>
+      <h1 className="text-center text-lg   lg:text-4xl font-bold mb-20 mt-6">Discover your Wanderlust</h1>
     </>
   );
 }

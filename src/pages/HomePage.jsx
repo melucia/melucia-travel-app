@@ -38,7 +38,6 @@ function HomePage() {
 
   return (
     <div>
-      <RandomPlace />
       {places.slice(0, 3).map((place) => (
         <div key={place.id}>
           <img src={place.image} style={{ height: "15rem" }} />
@@ -47,12 +46,12 @@ function HomePage() {
           <p>{showTextPreview(place.description, 100)}</p>
           {/* <Link to={"/PlaceDetails"} >More Details </Link> */}
           <Link to={`/places/${place.id}`}>
-                <button>More details</button>
-              </Link>
-              <Link to={`/places/`}>
-                <button>See all places</button>
-              </Link>
-          
+            <button>More details</button>
+          </Link>
+          <Link to={`/places/`}>
+            <button>See all places</button>
+          </Link>
+
         </div>
       ))}
     </div>
