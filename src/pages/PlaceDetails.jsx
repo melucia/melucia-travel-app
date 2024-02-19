@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import EditPlace from "./EditPlace";
 import { Link } from "react-router-dom";
 
+
 function PlaceDetails() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
 
@@ -49,10 +50,11 @@ function PlaceDetails() {
             <p>{place.country}</p>
             <p>Activity: {place.activity}</p>
             <p>Highlight: {place.highlight}</p>
-            <p>{place.description}</p>
+            <p>{place.textDescription}</p>
           </>
         )}
       </div>
+
       {place && (
         <>
           <button onClick={toggleFormVisibility}>
@@ -64,6 +66,7 @@ function PlaceDetails() {
               onUpdate={getPlace}
             />
           )}
+          <Link to="/places" >Back to All Places</Link>
         </>
       )}
     </div>
