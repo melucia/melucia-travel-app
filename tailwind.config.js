@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        "custom-lg": "640px",
+        "lg": "640px",
       },
     },
   },

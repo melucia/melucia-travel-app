@@ -37,21 +37,25 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
       {places.slice(0, 3).map((place) => (
-        <div key={place.id}>
-          <img src={place.image} style={{ height: "15rem" }} />
-          <h2>{place.city}</h2>
-          <p>{place.country}</p>
+        <div key={place.id}  
+        className="shadow-lg border-solid border rounded-xl flex w-full  lg:w-1/3 md:w-1/3 p-4">
+          <div className="object-contain w-96 h-80">
+          <img src={place.image} className="aspect-ratio: auto" />
+          </div>
+          <div className="ml-14">
+          <h2 className="text-3xl  font-semibold">{place.city}</h2>
+          <p className="text-xl  pt-2">{place.country}</p>
           <p>{showTextPreview(place.description, 100)}</p>
           {/* <Link to={"/PlaceDetails"} >More Details </Link> */}
           <Link to={`/places/${place.id}`}>
-            <button>More details</button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">More details</button>
           </Link>
           <Link to={`/places/`}>
-            <button>See all places</button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">See all places</button>
           </Link>
-
+          </div>
         </div>
       ))}
     </div>

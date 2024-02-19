@@ -12,10 +12,10 @@ function Search({ onSearch, places }) {
   };
 
   return (
-    <div className="d-inline-flex justify-content-center align-items-center w-100 p-4">
+    <div className="shadow-lg border-solid border rounded-xl w-96 h-44 flex-col content-center mb-12 p-8 mr-20">
       <div className="input-group mb-2 w-50">
         <div className="input-group-prepend">
-          <span className="input-group-text" id="basic-addon1">
+          <span className="input-group-text text-center text-xl mb-2" id="basic-addon1">
             Search
           </span>
         </div>

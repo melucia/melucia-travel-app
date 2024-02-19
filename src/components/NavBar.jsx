@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <>
-      <div className="flex bg-green-100">
+      <div className="flex bg-green-100 sticky top-0">
         <div>
           <img className="ml-6 mt-1" src="src/assets/melucia-logo.png" atl="logo" />
         </div>
@@ -18,7 +18,7 @@ function NavBar() {
             to="/randomplace"> Get a random Place</NavLink>
         </nav>
       </div>
-      <h1 className="text-center text-lg   lg:text-4xl font-bold mb-20 mt-6">Discover your Wanderlust</h1>
+      <h1 className="text-center text-lg   lg:text-4xl font-bold mb-8 mt-6">Discover your Wanderlust</h1>
     </>
   );
 }

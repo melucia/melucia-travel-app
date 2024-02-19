@@ -42,7 +42,7 @@ function PlaceDetails() {
 
   return (
     <div>
-      <div>
+      <div className="flex flex-row justify-center gap-x-12 gap-y-8 flex-grow">
         {place && (
           <>
             <img src={place.image} style={{ height: "20rem" }} />
@@ -57,7 +57,7 @@ function PlaceDetails() {
 
       {place && (
         <>
-          <button onClick={toggleFormVisibility}>
+          <button onClick={toggleFormVisibility} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
             {isFormVisible ? "Hide Edit Form" : "Show Edit Form"}
           </button>
           {isFormVisible && (
@@ -66,7 +66,7 @@ function PlaceDetails() {
               onUpdate={getPlace}
             />
           )}
-          <Link to="/places" >Back to All Places</Link>
+          <Link to="/places" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" >Back to All Places</Link>
         </>
       )}
     </div>

@@ -39,10 +39,10 @@ function AddPlace({ onAddPlace }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="shadow-lg border-solid border rounded-xl w-72 h-52 flex-col content-center mb-12">
-      <h2>Add a new Place</h2>
+    <form onSubmit={handleSubmit} className="shadow-lg border-solid border rounded-xl w-96 h-80 flex-col content-center mb-10 p-4 ml-20">
+      <h2 className="text-center text-xl mb-2">Add a new Place</h2>
 
-      <div className="UpdateInput">
+      <div className="flex justify-between gap-12 p-1">
         <label>Image: </label>
         <input
           type="url"
@@ -53,7 +53,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <div className="UpdateInput">
+      <div className="flex justify-between gap-16 p-1">
         <label>City: </label>
         <input
           type="text"
@@ -65,7 +65,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <div className="UpdateInput">
+      <div className="flex justify-between gap-10 p-1">
         <label>Country: </label>
         <input
           type="text"
@@ -77,7 +77,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <div className="UpdateInput">
+      <div className="flex justify-between gap-4 p-1">
         <label>Description: </label>
         <input
           type="text"
@@ -89,7 +89,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <div className="UpdateInput">
+      <div className="flex justify-between gap-10 p-1">
         <label>Activity:</label>
         <input
           type="text"
@@ -101,7 +101,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <div className="UpdateInput">
+      <div className="flex justify-between gap-8 p-1">
         <label>Highlight: </label>
         <input
           type="text"
@@ -113,7 +113,8 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <button>Add</button>
+      <button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded ml-32 mt-4">
+        Add</button>
     </form>
   );
 }
