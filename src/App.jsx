@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <Search />
+    
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/places" element={<AllPlaces />} />

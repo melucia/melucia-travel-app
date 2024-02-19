@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AddPlace from "./AddPlace";
 import { FaTrashCan } from "react-icons/fa6";
+import Search from "../components/Search";
+
 
 function AllPlaces() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
 
   const [places, setPlaces] = useState([]);
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
 
   const getAllPlaces = () => {
     axios
@@ -15,6 +18,7 @@ function AllPlaces() {
       .then((response) => {
         console.log(response.data);
         setPlaces(response.data);
+        setFilteredPlaces(response.data);
       })
       .catch((error) => {
         console.log("Error getting places from the API...");
@@ -44,17 +48,34 @@ function AllPlaces() {
   };
   const handleAddPlace = (newPlace) => {
     setPlaces([newPlace, ...places]);
+    setFilteredPlaces([newPlace, ...places]);
   };
 
+  const handleChange = (value) => {
+    console.log(typeof value, "value");
+    if (value === "") {
+      setFilteredPlaces(places);
+    } else {
+      const results = places.filter((place) => {
+        return (
+          place?.city?.toLowerCase().includes(value) ||
+          place?.country?.toLowerCase().includes(value)
+        );
+      });
+
+      setFilteredPlaces(results);
+    }
+  };
   return (
     <>
+      <Search onSearch={handleChange} />
       <AddPlace onAddPlace={handleAddPlace} />
       <div>
-        {places.map((place, index) => {
+        {filteredPlaces.map((place, index) => {
           return (
             <div key={index}>
               <Link to={`/places/${place.id}`}>
-              <img src={place.image} style={{ height: "20rem" }} />
+                <img src={place.image} style={{ height: "20rem" }} />
               </Link>
               <h2>{place.city}</h2>
               <p>{place.country}</p>
@@ -78,5 +99,4 @@ function AllPlaces() {
     </>
   );
 }
-
 export default AllPlaces;
