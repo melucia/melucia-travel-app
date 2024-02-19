@@ -12,22 +12,21 @@ function Search({ onSearch, places }) {
   };
 
   return (
-    <div className="shadow-lg border-solid border rounded-xl w-96 h-44 flex-col content-center mb-12 p-8 mr-20">
+    <div className="shadow-lg border-solid border rounded-xl content-center justify-center w-36 h-12 lg:w-80">
       <div className="input-group mb-2 w-50">
         <div className="input-group-prepend">
-          <span className="input-group-text text-center text-xl mb-2" id="basic-addon1">
+          {/* <span className="input-group-text text-center text-xl mb-2" id="basic-addon1">
             Search
-          </span>
+          </span> */}
         </div>
-        <IoIosSearch/>
         <input
           type="text"
-          placeholder= "Search... 🔍" 
+          placeholder="Search... 🔍"
           value={searchQuery}
           onChange={handleInputChange}
-          className="form-control search-bar"
+          className="form-control search-bar w-24 h-8 lg:w-64 "
         />
-        
+
       </div>
     </div>
   );

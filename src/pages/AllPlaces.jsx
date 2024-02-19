@@ -29,16 +29,6 @@ function AllPlaces() {
     getAllPlaces();
   }, []);
 
-  const showTextPreview = (text, maxLength) => {
-    if (text === undefined) {
-      return "";
-    }
-    if (text.length <= maxLength) {
-      return text;
-    }
-    return text.substring(0, maxLength) + "...";
-  };
-
   const deletePlace = (placeId) => {
     const newPlaces = places.filter((placeObj) => placeObj.id !== placeId);
     setPlaces(newPlaces);
@@ -51,7 +41,7 @@ function AllPlaces() {
   };
 
   const handleChange = (value) => {
-    console.log(typeof value, "value");
+
     if (value === "") {
       setFilteredPlaces(places);
     } else {
@@ -67,9 +57,10 @@ function AllPlaces() {
   };
   return (
     <>
-      <div className="flex flex-row justify-center gap-x-12 gap-y-8 flex-grow">
-        <AddPlace onAddPlace={handleAddPlace} />
+      <div className="flex flex-col items-center gap-y-6" >
+        {/* items-center lg:flex-row lg:justify-center lg:gap-x-48 lg:gap-y-8" */}
         <Search onSearch={handleChange} />
+        <AddPlace onAddPlace={handleAddPlace} />
       </div>
       <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
         {filteredPlaces.map((place, index) => {
@@ -89,7 +80,7 @@ function AllPlaces() {
                 <p className="text-xl  pt-2">{place.country}</p>
                 <p className="  pt-6">
                   {" "}
-                  {showTextPreview(place.description, 100)}
+                  {place.description}
                 </p>
                 <Link to={`/places/${place.id}`}>
                   <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-24">

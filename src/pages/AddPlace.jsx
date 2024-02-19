@@ -39,10 +39,10 @@ function AddPlace({ onAddPlace }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="shadow-lg border-solid border rounded-xl w-96 h-80 flex-col content-center mb-10 p-4 ml-20">
+    <form onSubmit={handleSubmit} className="self-center shadow-lg border-solid border rounded-xl w-80 h-70 flex-col mb-10 p-4">
       <h2 className="text-center text-xl mb-2">Add a new Place</h2>
 
-      <div className="flex justify-between gap-12 p-1">
+      <div className="flex justify-between p-1">
         <label>Image: </label>
         <input
           type="url"
