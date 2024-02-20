@@ -8,6 +8,7 @@ import PageNotFound from "./components/PageNotFound";
 import RandomPlace from "./pages/RandomPlace";
 import PlaceDetails from "./pages/PlaceDetails";
 import HomePage from "./pages/HomePage";
+import HomeCarousel from "./components/HomeCarousel";
 
 function App() {
   return (
