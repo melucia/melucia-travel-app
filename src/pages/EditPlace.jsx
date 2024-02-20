@@ -128,7 +128,7 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-24">Save</button>
+      <button type="submit" className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-24">Save</button>
     </form>
   );
 }

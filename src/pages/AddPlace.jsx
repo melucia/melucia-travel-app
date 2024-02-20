@@ -113,7 +113,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded ml-32 mt-4">
+      <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-1 px-2 rounded ml-32 mt-4">
         Add</button>
     </form>
   );

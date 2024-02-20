@@ -67,7 +67,7 @@ function AllPlaces() {
           return (
             <div
               key={index}
-              className="shadow-lg border-solid border rounded-xl flex w-full  lg:w-1/3 md:w-1/3 p-4"
+              className="shadow-lg border-solid border rounded-xl flex lg:w-1/3 md:w-1/3 p-4"
             >
               <div className="object-contain w-96 h-80">
                 <Link to={`/places/${place.id}`}>
@@ -83,7 +83,7 @@ function AllPlaces() {
                   {place.description}
                 </p>
                 <Link to={`/places/${place.id}`}>
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-24">
+                  <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-24">
                     More details
                   </button>
                 </Link>
