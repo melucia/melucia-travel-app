@@ -62,17 +62,18 @@ function AllPlaces() {
         <Search onSearch={handleChange} />
         <AddPlace onAddPlace={handleAddPlace} />
       </div>
-      <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+      <div className="flex justify-center gap-10 flex-wrap ml-16
+      lg:m-4">
         {filteredPlaces.map((place, index) => {
           return (
             <div
               key={index}
-              className="shadow-lg border-solid border rounded-xl flex lg:w-1/3 md:w-1/3 p-4"
+              className="shadow-lg border-solid border rounded-xl flex p-6 flex-row w-5/12 h-80 m-2"
             >
               <div className="object-contain w-96 h-80">
                 <Link to={`/places/${place.id}`}>
                   {/* <img src={place.image} className="h-72 w-full object-cover" /> */}
-                  <img src={place.image} className="aspect-ratio: auto" />
+                  <img src={place.image} className="aspect-ratio: 1 / 1 shadow-lg border-solid border rounded-xl " />
                 </Link>
               </div>
               <div className="ml-14">
@@ -83,7 +84,7 @@ function AllPlaces() {
                   {place.description}
                 </p>
                 <Link to={`/places/${place.id}`}>
-                  <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-24">
+                  <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-12">
                     More details
                   </button>
                 </Link>
