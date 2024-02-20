@@ -40,10 +40,11 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <div className="flex flex-wrap justify-center">
         <HomeCarousel places={places} />
       </div>
+      <Link to="/places" className="font-semibold lg:text-xl hover:text-blue-800">Discover all destinations</Link>
     </div>
   );
 }
