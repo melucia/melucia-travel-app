@@ -39,14 +39,14 @@ function AboutPage() {
               lg:text-lg">
                 I love to travel in my old VW van and discover the world. It's not the most comfortable
                 traveling, but it definetely has style! It is also a wonderful experience to see how people
-                 react to the van and tell me stories about their van they used to have a long time ago
-                </p> 
-                <p className="mt-4 ml-6">
+                react to the van and tell me stories about their van they used to have a long time ago
+              </p>
+              <p className="mt-4 ml-6">
                 Favourite place:
                 <b className="mx-6">Wildalpen, Austria</b>
-                </p> 
-                
-              
+              </p>
+
+
             </div>
 
             <div className="inline-flex">
@@ -77,9 +77,9 @@ function AboutPage() {
                 setting off a journey that has taken me to live in three
                 different countries so far. From Argentina to the world!
               </p>
-              <p className="mt-4 ml-6"> 
-              Favourite place: 
-              <b className="mx-6">Mallorca, Spain</b>
+              <p className="mt-4 ml-6">
+                Favourite place:
+                <b className="mx-6">Jericoacoara, Brazil</b>
               </p>
             </div>
 

@@ -49,7 +49,7 @@ function RandomPlace() {
 
       {onePlace && (
         <div className="flex flex-col items-center shadow-lg border-solid border rounded-xl lg:mx-96">
-          <h3 className="text-center text-2xl font-semibold pt-4">{onePlace.city}</h3>
+          <h3 className="text-center text-xl font-semibold lg:text-2xl pt-4">{onePlace.city}</h3>
           <h4 className="text-center text-xl">{onePlace.country}</h4>
           <div className="flex justify-center">
             <div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EditPlace from "./EditPlace";
 import { Link } from "react-router-dom";
-
+import { LiaMapMarkedAltSolid } from "react-icons/lia";
 
 function PlaceDetails() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -41,35 +41,40 @@ function PlaceDetails() {
   }, [placeId]);
 
   return (
-    <div>
-      <div className="flex flex-row justify-center gap-x-12 gap-y-8 flex-grow">
+    <>
+      <div className="shadow-lg border-solid border rounded-xl py-8 mx-8 lg:mx-24">
+        <div className="flex flex-col items-center justify-center ">
+          {place && (
+            <div className="flex flex-col items-center">
+              <img src={place.image} className="w-1/2 rounded-lg lg:w-1/3" />
+              <h2 className="text-xl font-bold pt-4 lg:text-3xl lg:pt-8">{place.city}</h2>
+              <p className="text-lg pb-2 lg:text-2xl lg:py-4"><LiaMapMarkedAltSolid className="inline text-xl" />{place.country}</p>
+              <p className="text-lg font-medium lg:text-xl">Activity: {place.activity}</p>
+              <p className="text-lg font-medium lg:text-xl">Highlight: {place.highlight}</p>
+              <p className="text-lg text-center mx-12 my-4 lg:text-xl lg:mx-36">{place.description}</p>
+              <p className="text-lg text-center mx-24 my-4 lg:text-xl lg:mx-36">{place.textDescription}</p>
+            </div>
+          )}
+        </div>
+
         {place && (
-          <>
-            <img src={place.image} style={{ height: "20rem" }} />
-            <h2>{place.city}</h2>
-            <p>{place.country}</p>
-            <p>Activity: {place.activity}</p>
-            <p>Highlight: {place.highlight}</p>
-            <p>{place.textDescription}</p>
-          </>
+          <div className="flex justify-center">
+            <button onClick={toggleFormVisibility} className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded mt-4 lg:py-2">
+              {isFormVisible ? "Hide Edit Form" : "Show Edit Form"}
+            </button>
+            {isFormVisible && (
+              <EditPlace
+                place={place}
+                onUpdate={getPlace}
+              />
+            )}
+          </div>
         )}
       </div>
-
-      {place && (
-        <>
-          <button onClick={toggleFormVisibility} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-            {isFormVisible ? "Hide Edit Form" : "Show Edit Form"}
-          </button>
-          {isFormVisible && (
-            <EditPlace
-              place={place}
-              onUpdate={getPlace}
-            />
-          )}
-          <Link to="/places" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" >Back to All Places</Link>
-        </>
-      )}
-    </div>
+      <div className="flex justify-center my-12">
+        <Link to="/places" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-4 lg:py-2" >Back to All Places</Link>
+      </div>
+    </>
   );
 }
 
