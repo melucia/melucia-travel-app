@@ -39,12 +39,13 @@ function AddPlace({ onAddPlace }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="self-center shadow-lg border-solid border rounded-xl w-80 h-70 flex-col mb-10 p-4">
-      <h2 className="text-center text-xl mb-2">Add a new Place</h2>
+    <form onSubmit={handleSubmit} className="self-center shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4">
+      <h2 className="text-center text-lg mb-1 -mt-0.5">Add a new Place</h2>
 
       <div className="flex justify-between p-1">
-        <label>Image: </label>
+        <label className="text-sm">Image: </label>
         <input
+        className="text-sm"
           type="url"
           name="image"
           placeholder="Place Image"
@@ -54,8 +55,9 @@ function AddPlace({ onAddPlace }) {
       </div>
 
       <div className="flex justify-between gap-16 p-1">
-        <label>City: </label>
+        <label className="text-sm">City: </label>
         <input
+        className="text-sm"
           type="text"
           name="city"
           required
@@ -66,8 +68,9 @@ function AddPlace({ onAddPlace }) {
       </div>
 
       <div className="flex justify-between gap-10 p-1">
-        <label>Country: </label>
+        <label className="text-sm">Country: </label>
         <input
+        className="text-sm"
           type="text"
           name="country"
           required
@@ -78,8 +81,9 @@ function AddPlace({ onAddPlace }) {
       </div>
 
       <div className="flex justify-between gap-4 p-1">
-        <label>Description: </label>
+        <label className="text-sm">Description: </label>
         <input
+        className="text-sm"
           type="text"
           name="description"
           required
@@ -90,8 +94,9 @@ function AddPlace({ onAddPlace }) {
       </div>
 
       <div className="flex justify-between gap-10 p-1">
-        <label>Activity:</label>
+        <label className="text-sm">Activity:</label>
         <input
+        className="text-sm"
           type="text"
           name="activity"
           required
@@ -102,8 +107,9 @@ function AddPlace({ onAddPlace }) {
       </div>
 
       <div className="flex justify-between gap-8 p-1">
-        <label>Highlight: </label>
+        <label className="text-sm">Highlight: </label>
         <input
+        className="text-sm"
           type="text"
           name="highlight"
           required
@@ -113,7 +119,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
 
-      <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-1 px-2 rounded ml-32 mt-4">
+      <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-1 px-2 rounded ml-28 mt-1.5 text-sm">
         Add</button>
     </form>
   );

@@ -13,8 +13,8 @@ function Search({ onSearch, places }) {
 
   return (
     <div className="">
-      <div className="mb-3">
-        <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+      <div className="mb-2">
+        <div className="mb-4 flex w-full flex-wrap items-stretch">
           {/* <span className="input-group-text text-center text-xl mb-2" id="basic-addon1">
             Search
           </span> */}
@@ -24,7 +24,7 @@ function Search({ onSearch, places }) {
           placeholder="Search... 🔍"
           value={searchQuery}
           onChange={handleInputChange}
-          className="relative m-0 -mr-0.5 block min-w-0 flex-auto shadow-lg border-solid border rounded-xl bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+          className="m-0 -mr-0.5 block min-w-0 flex-auto shadow-lg border-solid border rounded-xl bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
         />
 
       </div>

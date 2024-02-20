@@ -26,7 +26,7 @@ function AboutPage() {
       <div className="flex gap-10 flex-col ml-16
       lg:ml-44">
         <div>
-          <div className="shadow-lg border-solid border rounded-xl p-6 flex flex-row w-10/12">
+          <div className="shadow-xl border-solid border rounded-xl p-6 flex flex-row w-10/12">
             <div>
               <img src={Mel} className="w-80 aspect-ratio: 1 / 1 shadow-lg border-solid border rounded-xl mt-6" />
             </div>

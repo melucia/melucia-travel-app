@@ -30,10 +30,18 @@ function AllPlaces() {
   }, []);
 
   const deletePlace = (placeId) => {
-    const newPlaces = places.filter((placeObj) => placeObj.id !== placeId);
-    setPlaces(newPlaces);
-    setFilteredPlaces(newPlaces);
-  };
+    axios.delete(`${API_URL}/places/${placeId}`)
+        .then((response) => {
+          const newPlaces = places.filter((placeObj) => placeObj.id !== placeId);
+          setPlaces(newPlaces);
+          setFilteredPlaces(newPlaces);
+        })
+        .catch((error) => {
+            console.log("Error deleting place...");
+            console.log(error);
+        });
+}
+
 
   const handleAddPlace = (newPlace) => {
     setPlaces([newPlace, ...places]);
@@ -62,33 +70,38 @@ function AllPlaces() {
         <AddPlace onAddPlace={handleAddPlace} />
         <Search onSearch={handleChange} />
       </div>
-      <div className="flex justify-center gap-10 flex-wrap ml-16
-      lg:m-4">
+      <div className="flex justify-center gap-10 flex-wrap 
+      lg:m-4 lg:ml-16">
         {filteredPlaces.length === 0 ? (
-          <p className="shadow-lg border-solid border rounded-xl p-6 bg-green-100">
+          <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
             Sorry, we can't find your place. Feel free to add it yourself!</p>
         ) : (
         filteredPlaces.map((place, index) => {
           return (
             <div
               key={index}
-              className="shadow-lg border-solid border rounded-xl flex p-6 flex-row w-5/12 h-80 m-2"
+              className="shadow-xl border-solid border rounded-xl flex p-2 flex-row w-96 h-80 m-2
+              lg:p-6 lg:w-5/12 lg:flex-flow"
             >
               <div className="object-contain w-96 h-80">
                 <Link to={`/places/${place.id}`}>
                   {/* <img src={place.image} className="h-72 w-full object-cover" /> */}
-                  <img src={place.image} className="aspect-ratio: 1 / 1 shadow-lg border-solid border rounded-xl " />
+                  <img src={place.image} className="w-full aspect-ratio: 1 / 1 shadow-lg border-solid border rounded-xl" />
                 </Link>
               </div>
               <div className="ml-14">
-                <h2 className="text-3xl  font-semibold">{place.city}</h2>
-                <p className="text-xl  pt-2">{place.country}</p>
-                <p className="  pt-6">
+                <h2 className="text-lg
+                lg:text-3xl font-semibold">{place.city}</h2>
+                <p className="text-md
+                lg:text-xl pt-2">{place.country}</p>
+                <p className="text-sm
+                lg:text-base pt-6">
                   {" "}
                   {place.description}
                 </p>
                 <Link to={`/places/${place.id}`}>
-                  <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-12">
+                  <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold rounded text-sm
+                  lg:text-base py-2 px-4  mt-12">
                     More details
                   </button>
                 </Link>
