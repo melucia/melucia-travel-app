@@ -44,9 +44,6 @@ function HomePage() {
       <div className="flex flex-wrap justify-center">
         <HomeCarousel places={places} />
       </div>
-      <div className="flex justify-center">
-        <button className="font-bold">See all places</button>
-      </div>
     </div>
   );
 }
