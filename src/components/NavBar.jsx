@@ -18,7 +18,7 @@ function NavBar() {
             to="/randomplace"> Get a random Place</NavLink>
         </nav>
       </div>
-      <h1 className="text-center text-lg   lg:text-4xl font-bold mb-8 mt-6">Discover your Wanderlust</h1>
+      <h1 className="text-center text-xl   lg:text-4xl font-bold mb-8 mt-6">Discover your Wanderlust</h1>
     </>
   );
 }

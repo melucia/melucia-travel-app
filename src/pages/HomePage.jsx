@@ -50,10 +50,10 @@ function HomePage() {
           <p>{showTextPreview(place.description, 100)}</p>
           {/* <Link to={"/PlaceDetails"} >More Details </Link> */}
           <Link to={`/places/${place.id}`}>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">More details</button>
+            <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-4">More details</button>
           </Link>
           <Link to={`/places/`}>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">See all places</button>
+            <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-4">See all places</button>
           </Link>
           </div>
         </div>
