@@ -56,9 +56,9 @@ function EditPlace({ onUpdate }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="UpdatingForm">
-      <div className="UpdateInput">
-        <label>Image: </label>
+    <form onSubmit={handleSubmit} className="UpdatingForm py-12 flex flex-col items-center gap-6 lg:w-1/3">
+      <div className="UpdateInput p-1">
+        <label className="mx-6">Image: </label>
         <input
           type="url"
           name="image"
@@ -68,8 +68,8 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput">
-        <label>City: </label>
+      <div className="UpdateInput p-1">
+        <label className="mx-6">City: </label>
         <input
           type="text"
           name="city"
@@ -80,8 +80,8 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput">
-        <label>Country: </label>
+      <div className="UpdateInput p-1">
+        <label className="mx-6">Country: </label>
         <input
           type="text"
           name="country"
@@ -92,20 +92,9 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput">
-        <label>Description: </label>
-        <textarea
-          type="text"
-          name="description"
-          required
-          placeholder={description}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
 
-      <div className="UpdateInput">
-        <label>Activity:</label>
+      <div className="UpdateInput p-1">
+        <label className="mx-6">Activity:</label>
         <input
           type="text"
           name="activity"
@@ -116,8 +105,8 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput">
-        <label>Highlight: </label>
+      <div className="UpdateInput p-1">
+        <label className="mx-6">Highlight: </label>
         <input
           type="text"
           name="highlight"
@@ -128,7 +117,21 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <button type="submit" className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-24">Save</button>
+      <div className="UpdateInput flex">
+        <label className="mx-6">Description: </label>
+        <textarea
+          type="text"
+          name="description"
+          required
+          placeholder={description}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          className="h-36 w-44"
+        />
+      </div>
+      <div className="flex justify-center">
+        <button type="submit" className="bg-green-500 hover:bg-green-600 text-white font-bold w-24 py-2 rounded">Save</button>
+      </div>
     </form>
   );
 }

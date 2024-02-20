@@ -58,8 +58,8 @@ function PlaceDetails() {
         </div>
 
         {place && (
-          <div className="flex justify-center">
-            <button onClick={toggleFormVisibility} className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded mt-4 lg:py-2">
+          <div className="flex flex-col items-center">
+            <button onClick={toggleFormVisibility} className="w-40 h-12 bg-green-500 hover:bg-green-600 text-white font-bold py-1 rounded mt-4 lg:py-2">
               {isFormVisible ? "Hide Edit Form" : "Show Edit Form"}
             </button>
             {isFormVisible && (
