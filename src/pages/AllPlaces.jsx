@@ -59,12 +59,16 @@ function AllPlaces() {
     <>
       <div className="flex flex-col items-center gap-y-6" >
         {/* items-center lg:flex-row lg:justify-center lg:gap-x-48 lg:gap-y-8" */}
-        <Search onSearch={handleChange} />
         <AddPlace onAddPlace={handleAddPlace} />
+        <Search onSearch={handleChange} />
       </div>
       <div className="flex justify-center gap-10 flex-wrap ml-16
       lg:m-4">
-        {filteredPlaces.map((place, index) => {
+        {filteredPlaces.length === 0 ? (
+          <p className="shadow-lg border-solid border rounded-xl p-6 bg-green-100">
+            Sorry, we can't find your place. Feel free to add it yourself!</p>
+        ) : (
+        filteredPlaces.map((place, index) => {
           return (
             <div
               key={index}
@@ -101,7 +105,8 @@ function AllPlaces() {
               </div>
             </div>
           );
-        })}
+        })
+      )}
       </div>
     </>
   );
