@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AddPlace from "./AddPlace";
 import { FaTrashCan } from "react-icons/fa6";
 import Search from "../components/Search";
+import AllPlacesCard from "@/components/AllPlacesCard";
 
 function AllPlaces() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -65,6 +66,12 @@ function AllPlaces() {
   };
   return (
     <>
+    <div>
+      <div>
+        <AllPlacesCard places={places} />
+      </div>
+    </div>
+    
       <div className="flex flex-col items-center gap-y-6" >
         {/* items-center lg:flex-row lg:justify-center lg:gap-x-48 lg:gap-y-8" */}
         <AddPlace onAddPlace={handleAddPlace} />
