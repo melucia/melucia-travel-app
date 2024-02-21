@@ -19,8 +19,8 @@ function AllPlacesCard({ places }) {
             <CardContent className="flex ">
               <img src={place.image} className="h-56 w-52 lg:h-56 lg:w-64 rounded-md self-center" />
               <div className="flex flex-col ml-5 px-6">
-                <span className="text-3xl font-semibold">{place.city}</span>
-                <span className="text-xl">{place.country}</span>
+                <span className="text-xl lg:text-3xl font-semibold">{place.city}</span>
+                <span className="text-lg lg:text-xl">{place.country}</span>
                 <span className="">{place.description}</span>
 
                 <Link to={`/places/${place.id}`}>
