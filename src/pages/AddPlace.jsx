@@ -48,7 +48,7 @@ function AddPlace({ onAddPlace }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="self-center shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4"
+      className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4"
     >
       <h2 className="text-center text-lg mb-1 -mt-0.5">Add a new Place</h2>
 

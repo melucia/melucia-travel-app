@@ -113,9 +113,9 @@ function AllPlaces() {
                         #{place.tagTwo}
                       </div>
                     </div>
-                    <div className="">
+                    <div className="flex flex-row justify-between">
                       <Link to={`/places/${place.id}`}>
-                        <Button variant="details">See more</Button>
+                        <Button className="mx-2" variant="details">See more</Button>
                       </Link>
 
                       <Button
