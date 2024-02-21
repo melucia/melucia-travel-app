@@ -88,8 +88,8 @@ function AllPlaces() {
           filteredPlaces.map((place, index) => {
             return (
               <div key={place.id} className="flex w-full">
-                <Card className="w-full lg:w-10/12 lg:h-80 m-2">
-                  <CardContent className="flex flex-col justify-center items-start gap-2 lg:flex-row">
+                <Card className="w-full ">
+                  <CardContent className="flex flex-col justify-start items-start gap-2 lg:flex-row">
                     <img
                       src={place.image}
                       className="h-56 w-full lg:h-56 lg:w-64 rounded-md object-cover"
@@ -101,10 +101,10 @@ function AllPlaces() {
                       <span className="text-lg lg:text-xl">
                         {place.country}
                       </span>
-                      <span className="">{place.description}</span>
+                      <span className="max-w-xs">{place.description}</span>
                     </div>
                   </CardContent>
-                  <CardFooter className="flex flex-row justify-between items-start">
+                  <CardFooter className="flex flex-row justify-between items-center">
                     <div className="flex justify-start gap-1">
                       <div className="border rounded-xl px-2 bg-emerald-300 text-md">
                         #{place.tagOne}

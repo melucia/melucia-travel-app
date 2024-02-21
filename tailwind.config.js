@@ -9,13 +9,13 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    // screens: {
+    //   lg: "768px",
+    //   "2xl": "1400px",
+    // },
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        lg: "768px",
-        "2xl": "1400px",
-      },
     },
     extend: {
       keyframes: {
