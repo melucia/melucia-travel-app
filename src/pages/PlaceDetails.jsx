@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import EditPlace from "./EditPlace";
 import { Link } from "react-router-dom";
 import { LiaMapMarkedAltSolid } from "react-icons/lia";
+import { Button } from "@/components/ui/button";
 
 function PlaceDetails() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -42,12 +43,12 @@ function PlaceDetails() {
 
   return (
     <>
-      <div className="shadow-lg border-solid border rounded-xl py-8 mx-8 lg:mx-24">
+      <div className="py-4 mx-8 lg:mx-24">
         <div className="flex flex-col items-center justify-center ">
           {place && (
             <div className="flex flex-col items-center">
+              <h2 className="text-xl font-bold lg:text-3xl py-4">{place.city}</h2>
               <img src={place.image} className="w-1/2 rounded-lg lg:w-1/3" />
-              <h2 className="text-xl font-bold pt-4 lg:text-3xl lg:pt-8">{place.city}</h2>
               <p className="text-lg pb-2 lg:text-2xl lg:py-4"><LiaMapMarkedAltSolid className="inline text-xl" />{place.country}</p>
               <p className="text-lg font-medium lg:text-xl">Activity: {place.activity}</p>
               <p className="text-lg font-medium lg:text-xl">Highlight: {place.highlight}</p>
@@ -59,9 +60,9 @@ function PlaceDetails() {
 
         {place && (
           <div className="flex flex-col items-center">
-            <button onClick={toggleFormVisibility} className="w-40 h-12 bg-green-500 hover:bg-green-600 text-white font-bold py-1 rounded mt-4 lg:py-2">
+            <Button onClick={toggleFormVisibility} variant="details">
               {isFormVisible ? "Hide Edit Form" : "Show Edit Form"}
-            </button>
+            </Button>
             {isFormVisible && (
               <EditPlace
                 place={place}
@@ -72,7 +73,7 @@ function PlaceDetails() {
         )}
       </div>
       <div className="flex justify-center my-12">
-        <Link to="/places" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-4 lg:py-2" >Back to All Places</Link>
+        <Link to="/places"> <Button variant="details"> Back to All Places </Button></Link>
       </div>
     </>
   );

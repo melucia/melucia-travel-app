@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
 
 function EditPlace({ onUpdate }) {
   const API_URL = " https://melucia-travel-app.adaptable.app";
@@ -47,7 +48,7 @@ function EditPlace({ onUpdate }) {
       .put(`${API_URL}/places/${placeId}`, updatedPlace)
       .then((response) => {
         console.log("Sending put request")
-        onUpdate(); // update state on the parent component
+        onUpdate();
       })
       .catch((error) => {
         console.log("Error getting details from the API...");
@@ -56,7 +57,7 @@ function EditPlace({ onUpdate }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="UpdatingForm py-12 flex flex-col items-center gap-6 lg:w-1/3">
+    <form onSubmit={handleSubmit} className="UpdatingForm border-solid rounded-lg shadow-lg py-12 flex flex-col items-center gap-6 lg:w-1/3">
       <div className="UpdateInput p-1">
         <label className="mx-6">Image: </label>
         <input
@@ -130,7 +131,7 @@ function EditPlace({ onUpdate }) {
         />
       </div>
       <div className="flex justify-center">
-        <button type="submit" className="bg-green-500 hover:bg-green-600 text-white font-bold w-24 py-2 rounded">Save</button>
+        <Button type="submit" variant="details">Save</Button>
       </div>
     </form>
   );
