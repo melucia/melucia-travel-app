@@ -5,14 +5,7 @@ import AddPlace from "./AddPlace";
 import { FaTrashCan } from "react-icons/fa6";
 import Search from "../components/Search";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 function AllPlaces() {
@@ -72,10 +65,10 @@ function AllPlaces() {
       setFilteredPlaces(results);
     }
   };
+
   return (
     <>
       <div className="flex flex-col items-center gap-y-6">
-        {/* items-center lg:flex-row lg:justify-center lg:gap-x-48 lg:gap-y-8" */}
         <AddPlace onAddPlace={handleAddPlace} />
         <Search onSearch={handleChange} />
       </div>
@@ -115,7 +108,9 @@ function AllPlaces() {
                     </div>
                     <div className="flex flex-row justify-between">
                       <Link to={`/places/${place.id}`}>
-                        <Button className="mx-2" variant="details">See more</Button>
+                        <Button className="mx-2" variant="details">
+                          See more
+                        </Button>
                       </Link>
 
                       <Button

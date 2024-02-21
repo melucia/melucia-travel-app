@@ -1,11 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import RandomButton from "../components/RandomButton";
-import RandomPlace from "./RandomPlace";
 import HomeCarousel from "@/components/HomeCarousel";
-
-
+import { Button } from "@/components/ui/button";
 
 function HomePage() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -29,22 +26,19 @@ function HomePage() {
     getAllPlaces();
   }, []);
 
-  const showTextPreview = (text, maxLength) => {
-    if (text === undefined) {
-      return "";
-    }
-    if (text.length <= maxLength) {
-      return text;
-    }
-    return text.substring(0, maxLength) + "...";
-  };
-
   return (
     <div className="text-center">
       <div className="flex flex-wrap justify-center">
         <HomeCarousel places={places} />
       </div>
-      <Link to="/places" className="font-semibold lg:text-xl hover:text-blue-800">Discover all destinations</Link>
+      <Link
+        to="/places"
+        className="font-semibold lg:text-xl hover:text-blue-800"
+      >
+        <Button className="mx-2" variant="details">
+          Discover all destinations
+        </Button>
+      </Link>
     </div>
   );
 }

@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import RandomButton from "../components/RandomButton";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 
 function RandomPlace() {
   const [randomPlaces, setRandomPlaces] = useState(null);
   const [onePlace, setOnePlace] = useState("");
-
 
   const fetchRandomPlace = async () => {
     try {
@@ -23,8 +27,7 @@ function RandomPlace() {
 
   useEffect(() => {
     fetchRandomPlace();
-  }, [])
-
+  }, []);
 
   const handleClick = () => {
     fetchRandomPlace();
@@ -37,38 +40,55 @@ function RandomPlace() {
 
   return (
     <div>
-      <h2 className="text-center text-2xl font-semibold mt-12">Explore the unknown: Random destination, activate!</h2>
-
+      <h2 className="text-center text-2xl font-semibold mt-10">
+        Explore the unknown: Random destination, activate!
+      </h2>
       <RandomButton onClick={handleClick} />
-
       {!onePlace && (
         <div className="flex justify-center items-center h-96">
           <h2 className="text-semibold text-2xl">Click the button to start!</h2>
         </div>
       )}
-
       {onePlace && (
-        <div className="flex flex-col items-center justify-center shadow-lg border-solid border rounded-xl lg:w-full mx-8">
-          <h3 className="text-center text-xl font-semibold lg:text-2xl pt-4">{onePlace.city}</h3>
-          <h4 className="text-center text-xl">{onePlace.country}</h4>
-          <div className="flex flex-col justify-between lg:flex-row">
-            <div className="flex flex-col w-full lg:w-auto"></div>
-            <div className="flex">
-              <div>
-                <img src={onePlace.image} className="h-80 w-96 my-12 border rounded-lg lg:w-full" />
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col lg:w-1/3 mt-8">
-            <span className="pb-1 mt-4 text-center font-semibold">Activity:</span> <span className="text-center">{onePlace.activity}</span>
-            <span className="py-1 text-center font-semibold">Highlight:</span> <span className="text-center">{onePlace.highlight}</span>
-            <p className="py-4 mx-4 mb-4 text-center lg:mx-0 lg:py-8">{onePlace.textDescription}</p>
+        <div className="flex justify-center items-center">
+          <div className="w-3/4">
+            <Card className="w-full ">
+              <CardContent className="flex flex-col gap-4">
+                <div className="flex flex-col items-center">
+                  <span className="text-xl lg:text-3xl font-semibold">
+                    {onePlace.city}
+                  </span>
+                  <img
+                    src={onePlace.image}
+                    className="h-full w-1/2  rounded-md object-cover mt-4"
+                  />
+                </div>
+                <div className="flex flex-col justify-center items-center text-center gap-4">
+                  <span className="text-lg lg:text-xl">{onePlace.country}</span>
+                  <span className="text-md lg:text-lg">
+                    Activity: {onePlace.activity}
+                  </span>
+                  <span className="text-md lg:text-lg">
+                    Highlight: {onePlace.highlight}
+                  </span>
+                  <span className="text-lg">{onePlace.description}</span>
+                </div>
+              </CardContent>
+              <CardFooter className="flex flex-row justify-between items-center">
+                <div className="flex justify-start gap-1">
+                  <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                    #{onePlace.tagOne}
+                  </div>
+                  <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                    #{onePlace.tagTwo}
+                  </div>
+                </div>
+              </CardFooter>
+            </Card>
           </div>
         </div>
-
-      )
-      }
-    </div >
+      )}
+    </div>
   );
 }
 

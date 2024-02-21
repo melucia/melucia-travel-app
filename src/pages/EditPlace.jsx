@@ -47,7 +47,7 @@ function EditPlace({ onUpdate }) {
     axios
       .put(`${API_URL}/places/${placeId}`, updatedPlace)
       .then((response) => {
-        console.log("Sending put request")
+        console.log("Sending put request");
         onUpdate();
       })
       .catch((error) => {
@@ -57,7 +57,10 @@ function EditPlace({ onUpdate }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="UpdatingForm border-solid rounded-lg shadow-lg py-12 flex flex-col items-center gap-6 lg:w-1/3">
+    <form
+      onSubmit={handleSubmit}
+      className="UpdatingForm border-solid rounded-lg shadow-lg bg-green-100 py-12 flex flex-col items-center gap-6 lg:w-1/3"
+    >
       <div className="UpdateInput p-1">
         <label className="mx-6">Image: </label>
         <input
@@ -92,7 +95,6 @@ function EditPlace({ onUpdate }) {
           onChange={(e) => setCountry(e.target.value)}
         />
       </div>
-
 
       <div className="UpdateInput p-1">
         <label className="mx-6">Activity:</label>
@@ -131,7 +133,9 @@ function EditPlace({ onUpdate }) {
         />
       </div>
       <div className="flex justify-center">
-        <Button type="submit" variant="details">Save</Button>
+        <Button type="submit" variant="details">
+          Save
+        </Button>
       </div>
     </form>
   );
