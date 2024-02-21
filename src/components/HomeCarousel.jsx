@@ -21,9 +21,9 @@ export function HomeCarousel({ places }) {
                                  <Link to={`/places/${place.id}`}>
                                 <div className="p-1">
                                     <Card className=" bg-green-100">
-                                        <CardContent className="flex flex-col gap-8 aspect-square items-center justify-center">
-                                            <span className="text-3xl font-semibold">{place.city}</span>
-                                            <span className="text-xl">{place.country}</span>
+                                        <CardContent className="flex flex-col gap-8 items-center justify-center">
+                                            <span className="text-xl lg:text-3xl font-semibold">{place.city}</span>
+                                            <span className="text-lg lg:text-xl">{place.country}</span>
                                             <img src={place.image} className="h-56 w-full rounded-md" />
                                         </CardContent>
                                     </Card>
