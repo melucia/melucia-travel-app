@@ -17,7 +17,7 @@ function AllPlacesCard({ places }) {
         <div key={place.id} className="lg:w-1/2 lg:px-2 lg:py-4">
           <Card className="h-full">
             <CardContent className="flex ">
-              <img src={place.image} className="h-56 w-52 rounded-md self-center" />
+              <img src={place.image} className="h-56 w-52 lg:h-56 lg:w-64 rounded-md self-center" />
               <div className="flex flex-col ml-5 px-6">
                 <span className="text-3xl font-semibold">{place.city}</span>
                 <span className="text-xl">{place.country}</span>
