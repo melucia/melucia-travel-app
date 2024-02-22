@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 function AddPlace({ onAddPlace }) {
   const [newPlace, setNewPlace] = useState({
@@ -50,7 +51,6 @@ function AddPlace({ onAddPlace }) {
       onSubmit={handleSubmit}
       className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4"
     >
-      <h2 className="text-center text-lg mb-1 -mt-0.5">Add a new Place</h2>
 
       <div className="flex justify-between p-1">
         <label className="text-sm">Image: </label>
@@ -128,10 +128,11 @@ function AddPlace({ onAddPlace }) {
           onChange={handleValueChanges}
         />
       </div>
-
-      <button className="bg-cyan-600 hover:bg-cyan-800 text-white font-bold py-1 px-2 rounded ml-28 mt-1.5 text-sm">
-        Add
-      </button>
+      <div className="flex justify-center py-3">
+        <Button variant="add" size="sm" >
+          Add
+        </Button>
+      </div>
     </form>
   );
 }

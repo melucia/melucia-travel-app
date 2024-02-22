@@ -36,7 +36,7 @@ function RandomPlace() {
 
   return (
     <div>
-      <h2 className="text-center text-2xl font-semibold mt-10">
+      <h2 className="text-center text-lg lg:text-2xl font-semibold mt-10">
         Explore the unknown: Random destination, activate!
       </h2>
       <RandomButton onClick={handleClick} />
@@ -47,7 +47,7 @@ function RandomPlace() {
       )}
       {onePlace && (
         <div className="flex justify-center items-center">
-          <Card className="w-1/2 ">
+          <Card className="w-3/5 lg:w-1/2 ">
             <CardContent className="flex flex-col gap-4">
               <div className="flex flex-col items-center">
                 <span className="text-xl lg:text-3xl font-semibold">
@@ -55,18 +55,18 @@ function RandomPlace() {
                 </span>
                 <img
                   src={onePlace.image}
-                  className="h-full w-1/2  rounded-md object-cover mt-4"
+                  className="h-full w-full md:w-3/5 xl:w-1/2  rounded-md object-cover mt-4"
                 />
               </div>
               <div className="flex flex-col justify-center items-center text-center gap-4">
                 <span className="text-lg lg:text-xl">{onePlace.country}</span>
-                <span className="text-md lg:text-lg">
-                  Activity: {onePlace.activity}
+                <span className="text-sm lg:text-lg">
+                  <b>Activity:</b> {onePlace.activity}
                 </span>
-                <span className="text-md lg:text-lg">
-                  Highlight: {onePlace.highlight}
+                <span className="text-sm lg:text-lg">
+                  <b>Highlight:</b> {onePlace.highlight}
                 </span>
-                <span className="text-lg">{onePlace.description}</span>
+                <span className="text-sm lg:text-lg">{onePlace.description}</span>
               </div>
             </CardContent>
             <CardFooter className="flex flex-row justify-center items-center">

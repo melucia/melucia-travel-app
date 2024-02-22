@@ -23,7 +23,9 @@ const buttonVariants = cva(
         melucia: "bg-blue-950 hover:bg-red-700 text-white font-bold rounded",
         details:
           "bg-cyan-600 hover:bg-cyan-800 text-white font-bold rounded text-sm",
-          random: "bg-cyan-600 hover:bg-cyan-800 text-white font-bold rounded text-xl",
+        random: "bg-cyan-600 hover:bg-cyan-800 text-white font-bold rounded text-xl",
+        add:
+          "bg-cyan-600 hover:bg-cyan-800 text-white font-semibold rounded text-sm ",
       },
       size: {
         default: "h-10 px-4 py-2",

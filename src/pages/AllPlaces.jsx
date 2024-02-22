@@ -14,6 +14,12 @@ function AllPlaces() {
   const [places, setPlaces] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+
+  function toggleFormVisibility() {
+    setIsFormVisible(!isFormVisible);
+  }
 
   const getAllPlaces = () => {
     axios
@@ -73,8 +79,19 @@ function AllPlaces() {
 
   return (
     <>
+
       <div className="flex flex-col items-center gap-y-6">
-        <AddPlace onAddPlace={handleAddPlace} />
+        {
+          <div className="flex flex-col items-center">
+            <Button onClick={toggleFormVisibility} variant="details">
+              {isFormVisible ? "Add place" : "Add place"}
+            </Button>
+            {isFormVisible && <AddPlace onAddPlace={handleAddPlace} />}
+          </div>
+        }
+      </div>
+
+      <div className="flex justify-center">
         <Search onSearch={handleChange} />
       </div>
       {loading ? (
@@ -88,7 +105,7 @@ function AllPlaces() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-6 lg:gap-x-0.5 lg:m-4 lg:ml-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-6 lg:gap-x-0.5 lg:m-4">
           {filteredPlaces.length === 0 ? (
             <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
               Sorry, we can't find your place. Feel free to add it yourself!
