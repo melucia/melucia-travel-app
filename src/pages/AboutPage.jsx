@@ -13,7 +13,7 @@ function AboutPage() {
         "Travelling leaves you speachless, then turns you into a storyteller"
       </h3>
       <p
-        className="shadow-lg text-md px-12 py-12 text-center mb-6
+        className="text-md px-12 py-12 text-center mb-6
       lg:px-60 lg:py-8 lg:text-xl "
       >
         Driven by our shared passion for travel and technology, we join forces

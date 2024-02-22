@@ -1,8 +1,18 @@
-# React + Vite
+## Melucia - Discover your Wanderlust
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Description 
+  - React Vite app integrated with a mock API. It's an App showing different destinations around the world with features like adding, deleting, editing a destination.
 
-Currently, two official plugins are available:
+# Instructions to run this app in my computer. Probably something like this:
+  - git clone
+  - install dependencies (`npm install`)
+  - run the application (ex. `npm run dev`)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Demo
+  - https://melucia-wanderlust.netlify.app/
+
+  ![Screenshot of App](/assets/images/san-juan-mountains.jpg "Screenshot")
+
+
+
+<br />

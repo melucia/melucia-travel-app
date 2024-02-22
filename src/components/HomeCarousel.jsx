@@ -30,7 +30,7 @@ export function HomeCarousel({ places }) {
                         </span>
                         <img
                           src={place.image}
-                          className="h-56 w-full rounded-md"
+                          className="h-56 w-72 rounded-md"
                         />
                       </CardContent>
                     </Card>
