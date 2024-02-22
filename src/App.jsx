@@ -13,7 +13,7 @@ import InteractiveMap from "./components/InteractiveMap";
 
 function App() {
   return (
-    <div className="font-nunito text-blue-950 bg-green-50">
+    <div className="font-nunito text-blue-950 bg-green-50 overflow-hidden">
       <NavBar />
 
       <Routes>

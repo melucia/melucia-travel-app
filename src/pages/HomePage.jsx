@@ -28,7 +28,7 @@ function HomePage() {
 
   return (
     <div className="text-center">
-      <div className="flex flex-wrap justify-center">
+      <div className="flex w-screen justify-center">
         <HomeCarousel places={places} />
       </div>
       <Link

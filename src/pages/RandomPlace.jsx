@@ -70,11 +70,11 @@ function RandomPlace() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-row justify-center items-center">
-              <div className="flex justify-start gap-8">
-                <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+              <div className="flex justify-start gap-4 lg:gap-8 items-center text-center">
+                <div className="border rounded-xl px-2 bg-emerald-300 text-sm  lg:text-md">
                   #{onePlace.tagOne}
                 </div>
-                <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                <div className="border rounded-xl px-2 bg-emerald-300 text-sm lg:text-md">
                   #{onePlace.tagTwo}
                 </div>
               </div>

@@ -15,7 +15,7 @@ export function HomeCarousel({ places }) {
     <>
       <div className="flex flex-col">
         <Carousel className="w-1/3 my-auto mx-auto lg:w-full lg:max-w-lg">
-          <CarouselContent className="shadow-lg rounded-xl">
+          <CarouselContent>
             {places.slice(7, 12).map((place, index) => (
               <CarouselItem key={place.id}>
                 <Link to={`/places/${place.id}`}>
