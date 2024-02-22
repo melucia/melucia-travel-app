@@ -13,6 +13,7 @@ function AllPlaces() {
 
   const [places, setPlaces] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getAllPlaces = () => {
     axios
@@ -25,7 +26,11 @@ function AllPlaces() {
       .catch((error) => {
         console.log("Error getting places from the API...");
         console.log(error);
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+        console.log("we are spinning around the world")
+      })
   };
 
   useEffect(() => {
@@ -72,6 +77,21 @@ function AllPlaces() {
         <AddPlace onAddPlace={handleAddPlace} />
         <Search onSearch={handleChange} />
       </div>
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <button
+            type="button"
+            className="bg-indigo-500 text-white p-4 rounded-md"
+            disabled
+          >
+            <svg
+              className="animate-spin h-5 w-5 mr-3"
+              viewBox="0 0 24 24"
+            ></svg>
+            Loading...
+          </button>
+          </div>
+      ) : ( 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-6 lg:gap-x-0.5 lg:m-4 lg:ml-16">
         {filteredPlaces.length === 0 ? (
           <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
@@ -139,7 +159,9 @@ function AllPlaces() {
           })
         )}
       </div>
+      )}
     </>
+      
   );
 }
 export default AllPlaces;
