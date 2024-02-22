@@ -3,8 +3,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const InteractiveMap = ({ latitude, longitude }) => {
-    const API_URL = "https://melucia-travel-app.adaptable.app";
-
 
     useEffect(() => {
 
@@ -14,8 +12,6 @@ const InteractiveMap = ({ latitude, longitude }) => {
         }
 
         const map = L.map('map').setView([latitude, longitude], 11);
-
-
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'

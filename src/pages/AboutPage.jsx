@@ -71,15 +71,11 @@ function AboutPage() {
           </div>
         </div>
 
-
-
         <div className="bg-green-100 shadow-lg border-solid border rounded-xl p-6 flex flex-col items-center gap-2 w-10/12 lg:gap-6 lg:items-start lg:flex-row lg:w-10/12">
-
           <img
             src={Lu}
             className="w-3/4 shadow-lg border-solid border rounded-xl lg:w-64 lg:aspect-ratio: 1 / 1"
           />
-
           <div className="flex flex-col items-center gap-4">
             <h3
               className="text-center text-lg font-semibold 

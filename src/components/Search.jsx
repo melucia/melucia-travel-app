@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { IoIosSearch } from "react-icons/io";
 
 function Search({ onSearch, places }) {
   const [searchQuery, setSearchQuery] = useState("");
