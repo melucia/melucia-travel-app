@@ -81,7 +81,7 @@ function PlaceDetails() {
           </div>
         )}
       </div>
-      {place &&
+      {place && place.latitude && place.longitude &&
         <InteractiveMap latitude={place.latitude} longitude={place.longitude} />
       }
       <div className="flex justify-center my-12">

@@ -98,14 +98,23 @@ function AllPlaces() {
                     </div>
                   </CardContent>
                   <CardFooter className="flex flex-row justify-between items-center">
-                    <div className="flex justify-start gap-1">
-                      <div className="border rounded-xl px-2 bg-emerald-300 text-md">
-                        #{place.tagOne}
+                    {place.tagOne || place.tagTwo ? (
+                      <div className="flex justify-start gap-1">
+                        {place.tagOne && (
+                          <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                            #{place.tagOne}
+                          </div>
+                        )}
+                        {place.tagTwo && (
+                          <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                            #{place.tagTwo}
+                          </div>
+                        )}
+
                       </div>
-                      <div className="border rounded-xl px-2 bg-emerald-300 text-md">
-                        #{place.tagTwo}
-                      </div>
-                    </div>
+                    ) : (
+                      <h2></h2>
+                    )}
                     <div className="flex flex-row justify-between">
                       <Link to={`/places/${place.id}`}>
                         <Button className="mx-2" variant="details">
