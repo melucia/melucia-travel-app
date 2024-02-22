@@ -6,7 +6,10 @@ function NavBar() {
     <>
       <div className="flex bg-gradient-to-b from-green-200 to-green-50 top-0 gap-2 justify-between w-full lg:gap-2">
         <div className="flex items-center self-start">
+          <NavLink  className="cursor-pointer text-xs   lg:text-xl font-bold  hover:text-blue-800 hover:underline"
+              to="/" >
           <img className="w-24 lg:w-48" src={Logo} atl="logo" />
+          </NavLink>
         </div>
         <nav className="h-12 flex  pr-1 lg:h-16 lg:pr-8 ">
           <div className="flex justify-end items-center gap-1 lg:gap-10 ">
