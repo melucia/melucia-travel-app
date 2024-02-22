@@ -65,7 +65,7 @@ function PlaceDetails() {
               <p className="text-lg text-center mx-12 my-4 lg:text-xl lg:mx-36">
                 {place.description}
               </p>
-              <p className="text-lg text-center mx-24 my-4 lg:text-xl lg:mx-36">
+              <p className="text-lg text-center mx-8 my-4 lg:text-xl lg:mx-36">
                 {place.textDescription}
               </p>
             </div>
