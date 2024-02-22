@@ -5,6 +5,7 @@ import EditPlace from "./EditPlace";
 import { Link } from "react-router-dom";
 import { LiaMapMarkedAltSolid } from "react-icons/lia";
 import { Button } from "@/components/ui/button";
+import InteractiveMap from "@/components/InteractiveMap";
 
 function PlaceDetails() {
   const API_URL = "https://melucia-travel-app.adaptable.app";
@@ -80,14 +81,18 @@ function PlaceDetails() {
           </div>
         )}
       </div>
+      {place &&
+        <InteractiveMap latitude={place.latitude} longitude={place.longitude} />
+      }
       <div className="flex justify-center my-12">
         <Link to="/places">
           {" "}
           <Button variant="details"> Back to All Places </Button>
         </Link>
       </div>
+
     </>
   );
-}
+} 0
 
 export default PlaceDetails;

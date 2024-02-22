@@ -9,6 +9,7 @@ import RandomPlace from "./pages/RandomPlace";
 import PlaceDetails from "./pages/PlaceDetails";
 import HomePage from "./pages/HomePage";
 import HomeCarousel from "./components/HomeCarousel";
+import InteractiveMap from "./components/InteractiveMap";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/places/:placeId" element={<PlaceDetails />} />
         <Route path="/randomplace" element={<RandomPlace />} />
+        <Route path="/map" element={<InteractiveMap />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
