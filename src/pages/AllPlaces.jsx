@@ -105,7 +105,7 @@ function AllPlaces() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8  px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 lg:gap-8  px-10">
           {filteredPlaces.length === 0 ? (
             <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
               Sorry, we can't find your place. Feel free to add it yourself!
