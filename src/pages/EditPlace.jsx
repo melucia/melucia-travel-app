@@ -59,9 +59,9 @@ function EditPlace({ onUpdate }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="UpdatingForm border-solid rounded-lg shadow-lg bg-green-100 py-12 flex flex-col items-center gap-6 lg:w-1/3"
+      className="UpdatingForm border-solid rounded-lg shadow-lg bg-green-100 py-12 flex flex-col items-center md:justify-between gap-6 lg:w-1/3"
     >
-      <div className="UpdateInput p-1">
+      <div className="UpdateInput  p-1">
         <label className="mx-6">Image: </label>
         <input
           type="url"

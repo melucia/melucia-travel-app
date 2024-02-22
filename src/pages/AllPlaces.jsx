@@ -95,7 +95,7 @@ function AllPlaces() {
         <Search onSearch={handleChange} />
       </div>
       {loading ? (
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center w-screen items-center h-screen">
           <div
             class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full"
             role="status"
@@ -105,7 +105,7 @@ function AllPlaces() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-6 lg:gap-x-0.5 lg:m-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8  px-10">
           {filteredPlaces.length === 0 ? (
             <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
               Sorry, we can't find your place. Feel free to add it yourself!
@@ -114,13 +114,13 @@ function AllPlaces() {
             filteredPlaces.map((place, index) => {
               return (
                 <div key={place.id} className="flex w-full">
-                  <Card className="w-full ">
-                    <CardContent className="flex flex-col justify-start items-start gap-2 lg:flex-row">
+                  <Card className="w-96 mx-auto md:w-full">
+                    <CardContent className="flex flex-col justify-start items-start lg:items-center gap-2 lg:flex-row">
                       <img
                         src={place.image}
                         className="h-56 w-full lg:h-56 lg:w-64 rounded-md object-cover"
                       />
-                      <div className="flex flex-col justify-center items-center text-center gap-4">
+                      <div className="flex flex-col justify-center items-center text-center lg:w-full gap-4">
                         <span className="text-xl lg:text-3xl font-semibold ">
                           {place.city}
                         </span>
@@ -130,7 +130,7 @@ function AllPlaces() {
                         <span className="max-w-xs">{place.description}</span>
                       </div>
                     </CardContent>
-                    <CardFooter className="flex flex-row justify-between items-center">
+                    <CardFooter className="flex flex-row justify-between items-center ">
                       {place.tagOne || place.tagTwo ? (
                         <div className="flex justify-start gap-1">
                           {place.tagOne && (
@@ -139,7 +139,7 @@ function AllPlaces() {
                             </div>
                           )}
                           {place.tagTwo && (
-                            <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                            <div className="border hidden md:block rounded-xl px-2 bg-emerald-300 text-md">
                               #{place.tagTwo}
                             </div>
                           )}
