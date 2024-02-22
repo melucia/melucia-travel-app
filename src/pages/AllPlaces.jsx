@@ -29,8 +29,8 @@ function AllPlaces() {
       })
       .finally(() => {
         setLoading(false);
-        console.log("we are spinning around the world")
-      })
+        console.log("we are spinning around the world");
+      });
   };
 
   useEffect(() => {
@@ -79,89 +79,83 @@ function AllPlaces() {
       </div>
       {loading ? (
         <div className="flex justify-center items-center h-screen">
-          <button
-            type="button"
-            className="bg-indigo-500 text-white p-4 rounded-md"
-            disabled
+          <div
+            class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full"
+            role="status"
+            aria-label="loading"
           >
-            <svg
-              className="animate-spin h-5 w-5 mr-3"
-              viewBox="0 0 24 24"
-            ></svg>
-            Loading...
-          </button>
+            <span class="sr-only">Loading...</span>
           </div>
-      ) : ( 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-6 lg:gap-x-0.5 lg:m-4 lg:ml-16">
-        {filteredPlaces.length === 0 ? (
-          <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
-            Sorry, we can't find your place. Feel free to add it yourself!
-          </p>
-        ) : (
-          filteredPlaces.map((place, index) => {
-            return (
-              <div key={place.id} className="flex w-full">
-                <Card className="w-full ">
-                  <CardContent className="flex flex-col justify-start items-start gap-2 lg:flex-row">
-                    <img
-                      src={place.image}
-                      className="h-56 w-full lg:h-56 lg:w-64 rounded-md object-cover"
-                    />
-                    <div className="flex flex-col justify-center items-center text-center gap-4">
-                      <span className="text-xl lg:text-3xl font-semibold ">
-                        {place.city}
-                      </span>
-                      <span className="text-lg lg:text-xl">
-                        {place.country}
-                      </span>
-                      <span className="max-w-xs">{place.description}</span>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex flex-row justify-between items-center">
-                    {place.tagOne || place.tagTwo ? (
-                      <div className="flex justify-start gap-1">
-                        {place.tagOne && (
-                          <div className="border rounded-xl px-2 bg-emerald-300 text-md">
-                            #{place.tagOne}
-                          </div>
-                        )}
-                        {place.tagTwo && (
-                          <div className="border rounded-xl px-2 bg-emerald-300 text-md">
-                            #{place.tagTwo}
-                          </div>
-                        )}
-
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-6 lg:gap-x-0.5 lg:m-4 lg:ml-16">
+          {filteredPlaces.length === 0 ? (
+            <p className="shadow-xl border-solid border rounded-xl p-6 bg-green-100">
+              Sorry, we can't find your place. Feel free to add it yourself!
+            </p>
+          ) : (
+            filteredPlaces.map((place, index) => {
+              return (
+                <div key={place.id} className="flex w-full">
+                  <Card className="w-full ">
+                    <CardContent className="flex flex-col justify-start items-start gap-2 lg:flex-row">
+                      <img
+                        src={place.image}
+                        className="h-56 w-full lg:h-56 lg:w-64 rounded-md object-cover"
+                      />
+                      <div className="flex flex-col justify-center items-center text-center gap-4">
+                        <span className="text-xl lg:text-3xl font-semibold ">
+                          {place.city}
+                        </span>
+                        <span className="text-lg lg:text-xl">
+                          {place.country}
+                        </span>
+                        <span className="max-w-xs">{place.description}</span>
                       </div>
-                    ) : (
-                      <h2></h2>
-                    )}
-                    <div className="flex flex-row justify-between">
-                      <Link to={`/places/${place.id}`}>
-                        <Button className="mx-2" variant="details">
-                          See more
-                        </Button>
-                      </Link>
+                    </CardContent>
+                    <CardFooter className="flex flex-row justify-between items-center">
+                      {place.tagOne || place.tagTwo ? (
+                        <div className="flex justify-start gap-1">
+                          {place.tagOne && (
+                            <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                              #{place.tagOne}
+                            </div>
+                          )}
+                          {place.tagTwo && (
+                            <div className="border rounded-xl px-2 bg-emerald-300 text-md">
+                              #{place.tagTwo}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <h2></h2>
+                      )}
+                      <div className="flex flex-row justify-between">
+                        <Link to={`/places/${place.id}`}>
+                          <Button className="mx-2" variant="details">
+                            See more
+                          </Button>
+                        </Link>
 
-                      <Button
-                        variant="melucia"
-                        onClick={() => {
-                          console.log("deleting");
-                          deletePlace(place.id);
-                        }}
-                      >
-                        <FaTrashCan className="text-md" />
-                      </Button>
-                    </div>
-                  </CardFooter>
-                </Card>
-              </div>
-            );
-          })
-        )}
-      </div>
+                        <Button
+                          variant="melucia"
+                          onClick={() => {
+                            console.log("deleting");
+                            deletePlace(place.id);
+                          }}
+                        >
+                          <FaTrashCan className="text-md" />
+                        </Button>
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </div>
+              );
+            })
+          )}
+        </div>
       )}
     </>
-      
   );
 }
 export default AllPlaces;
