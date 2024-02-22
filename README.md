@@ -11,7 +11,9 @@
 ## Demo
   - https://melucia-wanderlust.netlify.app/
 
-  ![Screenshot of App!](/assets/homepage_screenshot.png "Screenshot")
+![Screenshot of App!](src/assets/homepage_screenshot.png "Screenshot")
+
+
 
 
 
