@@ -27,7 +27,6 @@ function EditPlace({ onUpdate }) {
         setHighlight(response.data.highlight);
       })
       .catch((error) => {
-        console.log("Error getting project details from the API...");
         console.log(error);
       });
   }, [placeId]);
@@ -47,11 +46,9 @@ function EditPlace({ onUpdate }) {
     axios
       .put(`${API_URL}/places/${placeId}`, updatedPlace)
       .then((response) => {
-        console.log("Sending put request");
         onUpdate();
       })
       .catch((error) => {
-        console.log("Error getting details from the API...");
         console.log(error);
       });
   };
@@ -62,9 +59,9 @@ function EditPlace({ onUpdate }) {
       className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4"
     >
       <div className="flex justify-between p-1">
-        <label className="text-sm" >Image: </label>
+        <label className="text-sm">Image: </label>
         <input
-        className="text-sm"
+          className="text-sm"
           type="url"
           name="image"
           placeholder={image}
@@ -76,7 +73,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">City: </label>
         <input
-        className="text-sm"
+          className="text-sm"
           type="text"
           name="city"
           required
@@ -89,7 +86,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">Country: </label>
         <input
-        className="text-sm"
+          className="text-sm"
           type="text"
           name="country"
           required
@@ -102,7 +99,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">Activity:</label>
         <input
-        className="text-sm"
+          className="text-sm"
           type="text"
           name="activity"
           required
@@ -115,7 +112,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">Highlight: </label>
         <input
-        className="text-sm"
+          className="text-sm"
           type="text"
           name="highlight"
           required
@@ -128,7 +125,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">Description: </label>
         <textarea
-        className="text-sm"
+          className="text-sm"
           type="text"
           name="description"
           required

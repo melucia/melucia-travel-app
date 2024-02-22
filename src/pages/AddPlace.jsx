@@ -29,7 +29,6 @@ function AddPlace({ onAddPlace }) {
     axios
       .post(`${API_URL}/places`, newPlace)
       .then((response) => {
-        console.log("place adding here", response.data);
         onAddPlace(response.data);
         setNewPlace({
           image: "",
@@ -41,9 +40,7 @@ function AddPlace({ onAddPlace }) {
         });
         navigate("/places");
       })
-      .catch((error) => {
-        console.error("Error adding place:", error);
-      });
+      .catch((error) => {});
   };
 
   return (
@@ -51,7 +48,6 @@ function AddPlace({ onAddPlace }) {
       onSubmit={handleSubmit}
       className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4"
     >
-
       <div className="flex justify-between p-1">
         <label className="text-sm">Image: </label>
         <input
@@ -129,7 +125,7 @@ function AddPlace({ onAddPlace }) {
         />
       </div>
       <div className="flex justify-center py-3">
-        <Button variant="add" size="sm" >
+        <Button variant="add" size="sm">
           Add
         </Button>
       </div>

@@ -16,7 +16,6 @@ function AllPlaces() {
   const [loading, setLoading] = useState(true);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
-
   function toggleFormVisibility() {
     setIsFormVisible(!isFormVisible);
   }
@@ -25,17 +24,14 @@ function AllPlaces() {
     axios
       .get(`${API_URL}/places`)
       .then((response) => {
-        console.log(response.data);
         setPlaces(response.data);
         setFilteredPlaces(response.data);
       })
       .catch((error) => {
-        console.log("Error getting places from the API...");
         console.log(error);
       })
       .finally(() => {
         setLoading(false);
-        console.log("we are spinning around the world");
       });
   };
 
@@ -52,7 +48,6 @@ function AllPlaces() {
         setFilteredPlaces(newPlaces);
       })
       .catch((error) => {
-        console.log("Error deleting place...");
         console.log(error);
       });
   };
@@ -79,7 +74,6 @@ function AllPlaces() {
 
   return (
     <>
-
       <div className="flex flex-col items-center gap-y-6">
         {
           <div className="flex flex-col items-center">
@@ -157,7 +151,6 @@ function AllPlaces() {
                         <Button
                           variant="melucia"
                           onClick={() => {
-                            console.log("deleting");
                             deletePlace(place.id);
                           }}
                         >
