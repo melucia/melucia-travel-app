@@ -91,11 +91,11 @@ function AllPlaces() {
       {loading ? (
         <div className="flex justify-center w-screen items-center h-screen">
           <div
-            class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full"
+            className="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full"
             role="status"
             aria-label="loading"
           >
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       ) : (

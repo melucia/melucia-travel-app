@@ -10,6 +10,7 @@ function EditPlace({ onUpdate }) {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [description, setDescription] = useState("");
+  const [textDescription, setTextDescription] = useState("");
   const [activity, setActivity] = useState("");
   const [highlight, setHighlight] = useState("");
 
@@ -25,6 +26,7 @@ function EditPlace({ onUpdate }) {
         setDescription(response.data.description);
         setActivity(response.data.activity);
         setHighlight(response.data.highlight);
+        setTextDescription (response.data.textDescription);
       })
       .catch((error) => {
         console.log(error);
@@ -39,6 +41,7 @@ function EditPlace({ onUpdate }) {
       city: city,
       country: country,
       description: description,
+      textDescription: textDescription,
       activity: activity,
       highlight: highlight,
     };
@@ -56,7 +59,7 @@ function EditPlace({ onUpdate }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-64 flex-col p-4"
+      className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-80 flex-col p-4"
     >
       <div className="flex justify-between p-1">
         <label className="text-sm">Image: </label>
@@ -123,7 +126,7 @@ function EditPlace({ onUpdate }) {
       </div>
 
       <div className="flex justify-between p-1">
-        <label className="text-sm">Description: </label>
+        <label className="text-sm">Summary: </label>
         <textarea
           className="text-sm"
           type="text"
@@ -134,7 +137,20 @@ function EditPlace({ onUpdate }) {
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      <div className="flex justify-center mt-1">
+
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Description: </label>
+        <textarea
+          className="text-sm"
+          type="text"
+          name="description"
+          required
+          placeholder={textDescription}
+          value={textDescription}
+          onChange={(e) => setTextDescription(e.target.value)}
+        />
+      </div>
+      <div className="flex justify-center mt-3">
         <Button type="submit" variant="details">
           Save
         </Button>
