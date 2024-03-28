@@ -15,8 +15,7 @@ function AllPlaces() {
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isFormVisible, setIsFormVisible] = useState(false);
-  const [filteredTags, setFilteredTags] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedTag, setSelectedTag] = useState(null);
 
 
   function toggleFormVisibility() {
@@ -93,30 +92,26 @@ function AllPlaces() {
   // }
 
 
-  const handleFilter = (tagOne) => {
-    setFilteredTags(tagOne);
-    if (tagOne === "All Tags") {
+  const handleFilter = (tag) => {
+    if (selectedTag === tag) {
+      setSelectedTag(null); 
       setFilteredPlaces(places);
     } else {
-      const filtered = places.filter((place) => place.tagOne === tagOne)
-      setFilteredPlaces(filtered)
+      setSelectedTag(tag);
+      if (tag === "All Tags") {
+        setFilteredPlaces(places);
+      } else {
+        const filtered = places.filter((place) => place.tag.includes(tag));
+        setFilteredPlaces(filtered);
+      }
     }
-  }
-
+  };
   return (
     <>
-      <div className="mt-28 flex justify-center">
+      <div className="mt-5 mb-10 flex justify-center">
         <Button
           variant="details"
-          className={`mt-4 md: mr-8 ${selectedCategory === "All Tags" && "bg-sky-900 text-yellow-500"
-            }`}
-          onClick={() => handleFilter("All Tags")}
-        >
-          All Tags
-        </Button>
-        <Button
-          variant="details"
-          className={`mt-4 md: mr-8 ${selectedCategory === "Cityscape" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md: mr-4 ${selectedTag === "Cityscape" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Cityscape")}
         >
@@ -125,7 +120,7 @@ function AllPlaces() {
 
         <Button
           variant="details"
-          className={`mt-4 md: mr-8 ${selectedCategory === "Beach" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md: mr-4 ${selectedTag === "Beach" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Beach")}
         >
@@ -134,7 +129,7 @@ function AllPlaces() {
 
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Mountain" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Mountain" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Mountain")}
         >
@@ -142,7 +137,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Historical" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Historical" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Historical")}
         >
@@ -150,7 +145,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Culinary" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Culinary" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Culinary")}
         >
@@ -158,7 +153,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Adventure" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Adventure" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Adventure")}
         >
@@ -166,7 +161,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Romantic" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Romantic" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Romantic")}
         >
@@ -174,7 +169,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Nightlife" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Nightlife" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Nightlife")}
         >
@@ -182,7 +177,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Cultural" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Cultural" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Cultural")}
         >
@@ -190,7 +185,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Art and Museums" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Art and Museums" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Art and Museums")}
         >
@@ -198,7 +193,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-8 ${selectedCategory === "Island" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Island" && "bg-sky-900 text-yellow-500"
             }`}
           onClick={() => handleFilter("Island")}
         >
