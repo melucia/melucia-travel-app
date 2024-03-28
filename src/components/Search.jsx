@@ -6,7 +6,7 @@ function Search({ onSearch, places }) {
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchQuery(value);
-    onSearch(value);
+    onSearch(value).toLowerCase;
   };
 
   return (

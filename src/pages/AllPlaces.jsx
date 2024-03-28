@@ -15,6 +15,8 @@ function AllPlaces() {
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const [filteredTags, setFilteredTags] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
 
   function toggleFormVisibility() {
@@ -62,14 +64,16 @@ function AllPlaces() {
     setFilteredPlaces([newPlace, ...places]);
   };
 
+
   const handleChange = (value) => {
-    if (value === "") {
+    const lowerCaseValue = value.toLowerCase();
+    if (lowerCaseValue === "") {
       setFilteredPlaces(places);
     } else {
       const results = places.filter((place) => {
         return (
-          place?.city?.toLowerCase().includes(value) ||
-          place?.country?.toLowerCase().includes(value)
+          place?.city?.toLowerCase().includes(lowerCaseValue) ||
+          place?.country?.toLowerCase().includes(lowerCaseValue)
         );
       });
 
@@ -77,8 +81,136 @@ function AllPlaces() {
     }
   };
 
+  // const handleFilter = (tagOne, tagTwo) => {
+  //   setFilteredTags({ tagOne, tagTwo });
+  //   if (tagOne === "All Tags" && tagTwo === "All Tags") {
+  //     setFilteredPlaces(places);
+  //   } else {
+  //     const filtered = places.filter((place) => {
+  //       return (
+  //         (tagOne === "All Tags" || place.tagOne === tagOne) &&
+  //         (tagTwo === "All Tags" || place.tagTwo === tagTwo)
+  //       )
+  //     })
+  //     setFilteredPlaces(filtered)
+  //   }
+  // }
+
+
+  const handleFilter = (tagOne) => {
+    setFilteredTags(tagOne);
+    if (tagOne === "All Tags") {
+      setFilteredPlaces(places);
+    } else {
+      const filtered = places.filter((place) => place.tagOne === tagOne)
+      setFilteredPlaces(filtered)
+    }
+  }
+
   return (
     <>
+      <div className="mt-28 flex justify-center">
+        <Button
+          variant="details"
+          className={`mt-4 md: mr-8 ${selectedCategory === "All Tags" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("All Tags")}
+        >
+          All Tags
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md: mr-8 ${selectedCategory === "Cityscape" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Cityscape")}
+        >
+          Cityscape
+        </Button>
+
+        <Button
+          variant="details"
+          className={`mt-4 md: mr-8 ${selectedCategory === "Beach" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Beach")}
+        >
+          Beach
+        </Button>
+
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Mountain" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Mountain")}
+        >
+          Mountain
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Historical" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Historical")}
+        >
+          Historical
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Culinary" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Culinary")}
+        >
+          Culinary
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Adventure" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Adventure")}
+        >
+          Adventure
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Romantic" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Romantic")}
+        >
+          Romantic
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Nightlife" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Nightlife")}
+        >
+          Nightlife
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Cultural" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Cultural")}
+        >
+          Cultural
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Art and Museums" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Art and Museums")}
+        >
+          Art and Museums
+        </Button>
+        <Button
+          variant="details"
+          className={`mt-4 md:  mr-8 ${selectedCategory === "Island" && "bg-sky-900 text-yellow-500"
+            }`}
+          onClick={() => handleFilter("Island")}
+        >
+          Island
+        </Button>
+
+
+      </div>
 
       <div className="flex flex-col items-center gap-y-6">
         {
@@ -111,6 +243,8 @@ function AllPlaces() {
               Sorry, we can't find your place. Feel free to add it yourself!
             </p>
           ) : (
+
+
             filteredPlaces.map((place, index) => {
               return (
                 <div key={place.id} className="flex w-full">
@@ -131,18 +265,16 @@ function AllPlaces() {
                       </div>
                     </CardContent>
                     <CardFooter className="flex flex-row justify-between items-center ">
-                      {place.tagOne || place.tagTwo ? (
+                      {place.tag && place.tag.length > 0 ? (
                         <div className="flex justify-start gap-1">
-                          {place.tagOne && (
-                            <div className="border rounded-xl px-2 bg-emerald-300 text-md">
-                              #{place.tagOne}
+                          {place.tag.map((tag, index) => (
+                            <div
+                              key={index}
+                              className="border rounded-xl px-2 bg-emerald-300 text-md"
+                            >
+                              #{tag}
                             </div>
-                          )}
-                          {place.tagTwo && (
-                            <div className="border hidden md:block rounded-xl px-2 bg-emerald-300 text-md">
-                              #{place.tagTwo}
-                            </div>
-                          )}
+                          ))}
                         </div>
                       ) : (
                         <h2></h2>
