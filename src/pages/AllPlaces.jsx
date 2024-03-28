@@ -27,17 +27,14 @@ function AllPlaces() {
     axios
       .get(`${API_URL}/places`)
       .then((response) => {
-        console.log(response.data);
         setPlaces(response.data);
         setFilteredPlaces(response.data);
       })
       .catch((error) => {
-        console.log("Error getting places from the API...");
         console.log(error);
       })
       .finally(() => {
         setLoading(false);
-        console.log("we are spinning around the world");
       });
   };
 
@@ -54,7 +51,6 @@ function AllPlaces() {
         setFilteredPlaces(newPlaces);
       })
       .catch((error) => {
-        console.log("Error deleting place...");
         console.log(error);
       });
   };
@@ -229,11 +225,11 @@ function AllPlaces() {
       {loading ? (
         <div className="flex justify-center w-screen items-center h-screen">
           <div
-            class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full"
+            className="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-indigo-600 rounded-full"
             role="status"
             aria-label="loading"
           >
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       ) : (
@@ -289,7 +285,6 @@ function AllPlaces() {
                         <Button
                           variant="melucia"
                           onClick={() => {
-                            console.log("deleting");
                             deletePlace(place.id);
                           }}
                         >

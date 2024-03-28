@@ -13,11 +13,9 @@ function HomePage() {
     axios
       .get(`${API_URL}/places`)
       .then((response) => {
-        console.log(response.data);
         setPlaces(response.data);
       })
       .catch((error) => {
-        console.log("Error getting places from the API...");
         console.log(error);
       });
   };

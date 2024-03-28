@@ -1,4 +1,5 @@
 import carBroken from "../assets/broken-car.jpeg";
+
 function PageNotFound() {
   return (
     <div className="flex flex-col items-center h-screen py-6 text-semibold text-xl">

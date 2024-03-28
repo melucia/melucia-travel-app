@@ -10,6 +10,7 @@ function EditPlace({ onUpdate }) {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [description, setDescription] = useState("");
+  const [textDescription, setTextDescription] = useState("");
   const [activity, setActivity] = useState("");
   const [highlight, setHighlight] = useState("");
 
@@ -25,9 +26,9 @@ function EditPlace({ onUpdate }) {
         setDescription(response.data.description);
         setActivity(response.data.activity);
         setHighlight(response.data.highlight);
+        setTextDescription (response.data.textDescription);
       })
       .catch((error) => {
-        console.log("Error getting project details from the API...");
         console.log(error);
       });
   }, [placeId]);
@@ -40,6 +41,7 @@ function EditPlace({ onUpdate }) {
       city: city,
       country: country,
       description: description,
+      textDescription: textDescription,
       activity: activity,
       highlight: highlight,
     };
@@ -47,11 +49,9 @@ function EditPlace({ onUpdate }) {
     axios
       .put(`${API_URL}/places/${placeId}`, updatedPlace)
       .then((response) => {
-        console.log("Sending put request");
         onUpdate();
       })
       .catch((error) => {
-        console.log("Error getting details from the API...");
         console.log(error);
       });
   };
@@ -59,11 +59,12 @@ function EditPlace({ onUpdate }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="UpdatingForm border-solid rounded-lg shadow-lg bg-green-100 py-12 flex flex-col items-center md:justify-between gap-6 lg:w-1/3"
+      className="self-center bg-green-100 shadow-lg border-solid border rounded-xl w-80 h-80 flex-col p-4"
     >
-      <div className="UpdateInput  p-1">
-        <label className="mx-6">Image: </label>
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Image: </label>
         <input
+          className="text-sm"
           type="url"
           name="image"
           placeholder={image}
@@ -72,9 +73,10 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput p-1">
-        <label className="mx-6">City: </label>
+      <div className="flex justify-between p-1">
+        <label className="text-sm">City: </label>
         <input
+          className="text-sm"
           type="text"
           name="city"
           required
@@ -84,9 +86,10 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput p-1">
-        <label className="mx-6">Country: </label>
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Country: </label>
         <input
+          className="text-sm"
           type="text"
           name="country"
           required
@@ -96,9 +99,10 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput p-1">
-        <label className="mx-6">Activity:</label>
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Activity:</label>
         <input
+          className="text-sm"
           type="text"
           name="activity"
           required
@@ -108,9 +112,10 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput p-1">
-        <label className="mx-6">Highlight: </label>
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Highlight: </label>
         <input
+          className="text-sm"
           type="text"
           name="highlight"
           required
@@ -120,19 +125,32 @@ function EditPlace({ onUpdate }) {
         />
       </div>
 
-      <div className="UpdateInput flex">
-        <label className="mx-6">Description: </label>
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Summary: </label>
         <textarea
+          className="text-sm"
           type="text"
           name="description"
           required
           placeholder={description}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="h-36 w-44"
         />
       </div>
-      <div className="flex justify-center">
+
+      <div className="flex justify-between p-1">
+        <label className="text-sm">Description: </label>
+        <textarea
+          className="text-sm"
+          type="text"
+          name="description"
+          required
+          placeholder={textDescription}
+          value={textDescription}
+          onChange={(e) => setTextDescription(e.target.value)}
+        />
+      </div>
+      <div className="flex justify-center mt-3">
         <Button type="submit" variant="details">
           Save
         </Button>

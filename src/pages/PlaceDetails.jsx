@@ -22,18 +22,14 @@ function PlaceDetails() {
     axios
       .get(`${API_URL}/places/${placeId}`)
       .then((response) => {
-        console.log("Getting data");
         setPlace(response.data);
-        console.log("Setting Place Correctly");
       })
       .catch((error) => {
-        console.log("Error getting place details from the API...");
         console.log(error);
       });
   };
 
   const handlePlaceUpdate = (updatedPlace) => {
-    console.log("update the place");
     setPlace(updatedPlace);
     toggleFormVisibility();
   };
@@ -81,18 +77,18 @@ function PlaceDetails() {
           </div>
         )}
       </div>
-      {place && place.latitude && place.longitude &&
+      {place && place.latitude && place.longitude && (
         <InteractiveMap latitude={place.latitude} longitude={place.longitude} />
-      }
+      )}
       <div className="flex justify-center my-12">
         <Link to="/places">
           {" "}
           <Button variant="details"> Back to All Places </Button>
         </Link>
       </div>
-
     </>
   );
-} 0
+}
+0;
 
 export default PlaceDetails;

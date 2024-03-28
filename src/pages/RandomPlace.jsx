@@ -13,10 +13,9 @@ function RandomPlace() {
         "https://melucia-travel-app.adaptable.app/places"
       );
       const result = await respone.data;
-      console.log("getting data", respone.data);
+
       setRandomPlaces(result);
     } catch (error) {
-      console.log("Error finding a place...");
       console.log(error);
     }
   };
@@ -66,7 +65,9 @@ function RandomPlace() {
                 <span className="text-sm lg:text-lg">
                   <b>Highlight:</b> {onePlace.highlight}
                 </span>
-                <span className="text-sm lg:text-lg">{onePlace.description}</span>
+                <span className="text-sm lg:text-lg">
+                  {onePlace.description}
+                </span>
               </div>
             </CardContent>
             <CardFooter className="flex flex-row justify-center items-center">
