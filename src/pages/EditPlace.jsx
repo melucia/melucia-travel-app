@@ -26,7 +26,7 @@ function EditPlace({ onUpdate }) {
         setDescription(response.data.description);
         setActivity(response.data.activity);
         setHighlight(response.data.highlight);
-        setTextDescription (response.data.textDescription);
+        setTextDescription(response.data.textDescription);
       })
       .catch((error) => {
         console.log(error);
@@ -128,7 +128,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">Summary: </label>
         <textarea
-          className="text-sm"
+          className="text-sm w-7/12 px-1"
           type="text"
           name="description"
           required
@@ -141,7 +141,7 @@ function EditPlace({ onUpdate }) {
       <div className="flex justify-between p-1">
         <label className="text-sm">Description: </label>
         <textarea
-          className="text-sm"
+          className="text-sm w-7/12 px-1"
           type="text"
           name="description"
           required

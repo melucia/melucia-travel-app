@@ -94,7 +94,7 @@ function AllPlaces() {
 
   const handleFilter = (tag) => {
     if (selectedTag === tag) {
-      setSelectedTag(null); 
+      setSelectedTag(null);
       setFilteredPlaces(places);
     } else {
       setSelectedTag(tag);
@@ -111,7 +111,7 @@ function AllPlaces() {
       <div className="mt-5 mb-10 flex justify-center">
         <Button
           variant="details"
-          className={`mt-4 md: mr-4 ${selectedTag === "Cityscape" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md: mr-4 ${selectedTag === "Cityscape"
             }`}
           onClick={() => handleFilter("Cityscape")}
         >
@@ -120,7 +120,7 @@ function AllPlaces() {
 
         <Button
           variant="details"
-          className={`mt-4 md: mr-4 ${selectedTag === "Beach" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md: mr-4 ${selectedTag === "Beach"
             }`}
           onClick={() => handleFilter("Beach")}
         >
@@ -129,7 +129,7 @@ function AllPlaces() {
 
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Mountain" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Mountain"
             }`}
           onClick={() => handleFilter("Mountain")}
         >
@@ -137,7 +137,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Historical" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Historical"
             }`}
           onClick={() => handleFilter("Historical")}
         >
@@ -145,7 +145,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Culinary" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Culinary"
             }`}
           onClick={() => handleFilter("Culinary")}
         >
@@ -153,7 +153,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Adventure" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Adventure"
             }`}
           onClick={() => handleFilter("Adventure")}
         >
@@ -161,7 +161,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Romantic" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Romantic"
             }`}
           onClick={() => handleFilter("Romantic")}
         >
@@ -169,7 +169,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Nightlife" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Nightlife"
             }`}
           onClick={() => handleFilter("Nightlife")}
         >
@@ -177,7 +177,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Cultural" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Cultural"
             }`}
           onClick={() => handleFilter("Cultural")}
         >
@@ -185,7 +185,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Art and Museums" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Art and Museums"
             }`}
           onClick={() => handleFilter("Art and Museums")}
         >
@@ -193,7 +193,7 @@ function AllPlaces() {
         </Button>
         <Button
           variant="details"
-          className={`mt-4 md:  mr-4 ${selectedTag === "Island" && "bg-sky-900 text-yellow-500"
+          className={`mt-4 md:  mr-4 ${selectedTag === "Island"
             }`}
           onClick={() => handleFilter("Island")}
         >
